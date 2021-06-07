@@ -18,7 +18,7 @@ http://localhost:8000/docs
 Send notification to user or group of users with many providers of notification
 witch is [fcm,sms,email]
 
-#Use these apis
+# Use these apis
 
 - send `POST` request to  `/api/users` to create user
 - send `GET` request to `/api/users` to get users ids
