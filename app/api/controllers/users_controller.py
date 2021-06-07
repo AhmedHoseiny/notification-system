@@ -14,5 +14,4 @@ async def users(_user_srv: UserService = Depends(UserService)):
 @users_ctrl.post('/users')
 async def create_user(_user_srv: UserService = Depends(UserService), user: User = Body(...)):
     user = jsonable_encoder(user)
-    user = await _user_srv.create_user(user)
-    return user
+    return await _user_srv.create_user(user)
