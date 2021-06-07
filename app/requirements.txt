@@ -1,0 +1,8 @@
+fastapi==0.62.0
+pydantic==1.7.3
+python-dotenv
+motor==2.2.0
+pika==1.2.0
+requests==2.25.1
+pytest==6.2.2
+
