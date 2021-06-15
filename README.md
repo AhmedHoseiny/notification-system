@@ -2,14 +2,19 @@
 
 ## Installation
 
+run `docker-compose build`
+
 run `docker-compose up`
 
 ## Run Tests
 
 `docker exec -it notification-system_app_1 bash -c "pytest"`
 
+`docker exec -it notification-system_send-notification_1 sh -c "npm run test"`
 
-## Available APIs And Docs
+
+
+## Available APIs And Documentation
 
 http://localhost:8000/docs
 
@@ -25,6 +30,5 @@ witch is [fcm,sms,email]
 - send `POST` request to  `/api/notifications` to create a notification
 - send `GET` request to  `/api/notifications` to get notifications
 
-The background task fired to send notification across multiple providers
 
 In the console you will see logs of notifications

@@ -5,6 +5,8 @@ from pydantic import BaseSettings
 class Settings(BaseSettings):
     MONGO_URI: str
     DB_NAME: str
+    RMQ_HOST: str
+    RMQ_QUEUE: str
 
     class Config:
         env_file = "./config/environments/.env.local"

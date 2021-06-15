@@ -1,5 +1,8 @@
 version: "3.4"
 services:
+  rabbitmq:
+    image: "rabbitmq:3.8"
+
   app:
       build: "./app"
       ports:
@@ -10,5 +13,21 @@ services:
         - SERVICE_ENVIRONMENT=local
       depends_on:
         - mongo
+        - rabbitmq
+        
   mongo:
     image: "mongo:4.0"
+  
+
+  send-notification:
+    build: "./send-notification"
+    ports:
+      - "6000:6000"
+    volumes:
+      - ./send-notification:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - SERVICE_ENVIRONMENT=local
+    depends_on:
+      - rabbitmq
+      - mongo
